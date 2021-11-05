@@ -11,8 +11,8 @@ public class BookingPayloads {
         bookingDates.put("checkin","2018-01-01");
         bookingDates.put("checkout","2019-01-01");
 
-        payload.put("firstname","Cristiano");
-        payload.put("lastname","Ronaldo");
+        payload.put("firstname","Steven");
+        payload.put("lastname","Gerrard");
         payload.put("totalprice",111);
         payload.put("depositpaid",true);
         payload.put("bookingdates",bookingDates);

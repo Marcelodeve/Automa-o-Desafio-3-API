@@ -40,7 +40,7 @@ public class GetBookingTest extends BaseTest {
     @Category({AllTests.class})
     @DisplayName("Listar uma reserva específica")
     public void validaUmaReservaEspecifica(){
-        int primeiroId = getBookingRequest.bookingReturnIds()    //Rever como e se utilizar essa variável
+        getBookingRequest.bookingReturnIds()    //Variável int primeiroId
                 .then()
                 .statusCode(200)
                 .extract()
@@ -50,7 +50,7 @@ public class GetBookingTest extends BaseTest {
     @Test
     @Severity(SeverityLevel.BLOCKER)
     @Category({AllTests.class})
-    @DisplayName("Listar IDs das reservas com filtro firstname")  //Fazer todos testes de filtro com AllBooking no Request
+    @DisplayName("Listar IDs das reservas com filtro firstname")
     public void returnBookingFilterFirstName() {
         getBookingRequest.bookingReturnFilterFirstName("sally")
                 .then()
@@ -122,7 +122,7 @@ public class GetBookingTest extends BaseTest {
     @DisplayName("Listar um retorno específico no Schema")
     public void validaUmaReservaEspecificoSchema() {
 
-        getBookingRequest.bookingReturnIds()    //Rever como e se utilizar essa variável
+        getBookingRequest.bookingReturnIds()    //Variável int primeiroId
                 .then()
                 .statusCode(200)
                 .body(matchesJsonSchema(new File(Utils.getSchemaBasePath("booking", "bookings"))))

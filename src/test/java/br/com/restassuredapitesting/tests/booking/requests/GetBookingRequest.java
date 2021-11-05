@@ -35,6 +35,15 @@ public class GetBookingRequest {
                 .log().all()
                 .get("booking");
     }
+
+    public Response bookingReturnFilterCheckout(String checkout){
+        return given()
+                .queryParams(checkout, "2014-05-21")
+                .when()
+                .log().all()
+                .get("booking");
+    }
+
     @Step("Buscar todas as reservas com filtragem {param1}={name1} , {param2}={name2} e {param3}={name3}")
     public Response allBookings(String param1, String name1, String param2, String name2, String param3, String name3) {
         return given()
@@ -44,13 +53,7 @@ public class GetBookingRequest {
                 .get("booking");
     }
 
-    public Response bookingReturnFilterCheckout(String checkout){
-        return given()
-                .queryParams(checkout, "2014-05-21")
-                .when()
-                .log().all()
-                .get("booking");
-    }
+
 }
 
 
